@@ -1,0 +1,38 @@
+{
+  "name": "contact-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "sst test",
+    "start": "sst start",
+    "prebuild": "ts-node schemaGenerator.ts",
+    "build": "sst build",
+    "deploy": "sst deploy",
+    "remove": "sst remove"
+  },
+  "eslintConfig": {
+    "extends": [
+      "serverless-stack"
+    ]
+  },
+  "devDependencies": {
+    "@tsconfig/node14": "^1.0.1",
+    "@types/aws-lambda": "^8.10.70",
+    "@types/node": "<15.0.0",
+    "@types/uuid": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "ajv-cli": "^5.0.0",
+    "ajv-formats": "^2.1.1",
+    "ajv-formats-draft2019": "^1.6.1",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "ts-node": "^10.5.0"
+  },
+  "dependencies": {
+    "@serverless-stack/cli": "0.66.0",
+    "@serverless-stack/resources": "0.66.0",
+    "aws-cdk-lib": "2.7.0",
+    "aws-xray-sdk": "^3.3.4",
+    "uuid": "^8.3.2",
+    "zlib": "^1.0.5"
+  }
+}
