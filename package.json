@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "test": "sst test",
+    "prestart": "ts-node schemaGenerator.ts",
     "start": "sst start",
     "prebuild": "ts-node schemaGenerator.ts",
     "build": "sst build",
@@ -30,8 +31,11 @@
   "dependencies": {
     "@serverless-stack/cli": "0.66.0",
     "@serverless-stack/resources": "0.66.0",
+    "@types/jsonwebtoken": "^8.5.8",
     "aws-cdk-lib": "2.7.0",
     "aws-xray-sdk": "^3.3.4",
+    "crypto": "^1.0.1",
+    "jsonwebtoken": "^8.5.1",
     "uuid": "^8.3.2",
     "zlib": "^1.0.5"
   }

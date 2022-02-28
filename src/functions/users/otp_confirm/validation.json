@@ -1,0 +1,54 @@
+{
+    "properties": {
+        "body": {
+            "oneOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "userId": {
+                            "type": "string"
+                        },
+                        "email": {
+                            "type": "string",
+                            "format": "email"
+                        },
+                        "otp": {
+                            "type": "string",
+                            "pattern": "^[0-9]{4}$"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": ["userId", "email", "otp"]
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "userId": {
+                            "type": "string"
+                        },
+                        "phone": {
+                            "type": "string",
+                            "pattern": "^[0-9]{10,}$"
+                        },
+                        "countryCode": {
+                            "type": "string",
+                            "pattern": "\\+[0-9]{1,3}"
+                        },
+                        "otp": {
+                            "type": "string",
+                            "pattern": "^[0-9]{4}$"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": ["userId", "phone", "countryCode", "otp"]
+                }
+            ]
+        },
+        "query": {},
+        "path": {}
+    },
+    "required": [
+        "query"
+    ],
+    "type": "object"
+}

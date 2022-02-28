@@ -8,6 +8,7 @@ module.exports = {
     "extends": ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
     rules: {
       "no-unused-vars": "off", // or "@typescript-eslint/no-unused-vars": "off",
+      "@typescript-eslint/no-var-requires": "off",
       "unused-imports/no-unused-imports": "error",
       "@typescript-eslint/no-non-null-assertion": "off",
       "unused-imports/no-unused-vars": [

@@ -1,0 +1,75 @@
+{
+    "properties": {
+        "body": {
+            "oneOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "firstName": {
+                            "type": "string",
+                            "pattern": "^[a-zA-Z]+$"
+                        },
+                        "lastName": {
+                            "type": "string",
+                            "pattern": "^[a-zA-Z]+$"
+                        },
+                        "walletName": {
+                            "type": "string",
+                            "pattern": "^[a-zA-Z]+$"
+                        },
+                        "email": {
+                            "type": "string",
+                            "format": "email"
+                        }
+                    },
+                    "required": [
+                        "firstName",
+                        "lastName",
+                        "walletName",
+                        "email"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "firstName": {
+                            "type": "string",
+                            "pattern": "^[a-zA-Z]+$"
+                        },
+                        "lastName": {
+                            "type": "string",
+                            "pattern": "^[a-zA-Z]+$"
+                        },
+                        "walletName": {
+                            "type": "string",
+                            "pattern": "^[a-zA-Z]+$"
+                        },
+                        "phone": {
+                            "type": "string",
+                            "pattern": "^[0-9]{10,}$"
+                        },
+                        "countryCode": {
+                            "type": "string",
+                            "pattern": "\\+[0-9]{1,3}"
+                        }
+                    },
+                    "required": [
+                        "firstName",
+                        "lastName",
+                        "walletName",
+                        "phone",
+                        "countryCode"
+                    ],
+                    "additionalProperties": false
+                }
+            ]
+        },
+        "query": {},
+        "path": {}
+    },
+    "required": [
+        "body"
+    ],
+    "type": "object"
+}

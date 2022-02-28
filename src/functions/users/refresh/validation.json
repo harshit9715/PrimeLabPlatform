@@ -1,0 +1,20 @@
+{
+    "properties": {
+        "body": {
+        },
+        "query": {},
+        "path": {},
+        "headers": {
+            "type": "object",
+            "properties": {
+                "refreshToken": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "required": [
+        "headers"
+    ],
+    "type": "object"
+}
