@@ -1,0 +1,20 @@
+{
+    "properties": {
+        "body": {
+        },
+        "query": {
+        },
+        "path": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "required": [
+        "path"
+    ],
+    "type": "object"
+}

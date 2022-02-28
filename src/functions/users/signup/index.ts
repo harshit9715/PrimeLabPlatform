@@ -4,10 +4,11 @@ import dynamodbLib from "../../../utils/dynamodb-lib";
 import { v4 as uuidv4 } from 'uuid';
 const validate = require('./validation.js');
 import { sendEmail, sendSMS } from "../../../utils/ses_sns";
-const random = `${Math.floor(1000 + Math.random() * 9000)}`
 
+import { DocumentClient } from "aws-sdk/clients/dynamodb";
 
 export const handler: APIGatewayProxyHandlerV2 = base_handler(async (event: APIGatewayProxyEventV2) => {
+  const random = `${Math.floor(1000 + Math.random() * 9000)}`
 
   const body = JSON.parse(event.body!);
   const { firstName, lastName, email, phone, walletName, countryCode } = body;
@@ -55,7 +56,7 @@ export const handler: APIGatewayProxyHandlerV2 = base_handler(async (event: APIG
         message: `A verification code has been sent to your ${email?'email: '+email: 'phone: '+countryCode+phone }.`
       }
     }
-  } catch (err) {
+  } catch (err: any) {
     if (existantError) {
       return {
         statusCode: 400,
@@ -77,7 +78,7 @@ export const handler: APIGatewayProxyHandlerV2 = base_handler(async (event: APIG
 
 
 async function verifyUniqueUser(walletName: string, email?:string, countryCode?:string, phone?:string) {
-  const types = [
+  const types:DocumentClient.QueryInput[] =  [
     {
       TableName: process.env.USERS_TABLE_NAME!,
       IndexName: 'ByWalletName',

@@ -88,13 +88,13 @@ export default class RootStack extends sst.Stack {
         "POST /users/signin": "src/functions/users/signin/index.handler",
         "POST /users/signin/confirm": "src/functions/users/otp_confirm/index.handler",
         "POST /token/refresh": "src/functions/users/refresh/index.handler",
+        "GET /users/id/{id}": "src/functions/users/profile/get/index.handler",
+        "GET /users/email/{email}": "src/functions/users/profile/get/index.handler",
+        "DELETE /users/id/{id}": "src/functions/users/profile/delete/index.handler",
+        
+        
         // "POST /logout": "src/functions/users/logout/index.handler",
-        // "GET /users/id/{id}": "src/functions/users/get/index.handler",
-        // "DELETE /users/id/{id}": "src/functions/users/delete/index.handler",
-
-
         // "PUT /users/id/{id}": "src/functions/users/update/index.handler",
-
         
         // "POST /users/{id}/verify": "src/functions/users/verify/index.handler",
         // "POST /users/{id}/verify/confirm": "src/users/confirm_verify/index.handler",

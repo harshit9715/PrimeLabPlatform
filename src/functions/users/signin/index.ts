@@ -55,7 +55,7 @@ export const handler: APIGatewayProxyHandlerV2 = base_handler(async (event: APIG
                 message: `A login code has been sent to your ${email ? 'email: ' + email : 'phone: ' + countryCode + phone}.`
             }
         }
-    } catch (err) {
+    } catch (err: any) {
         return {
             statusCode: err.statusCode || 400,
             body: {
@@ -67,7 +67,7 @@ export const handler: APIGatewayProxyHandlerV2 = base_handler(async (event: APIG
 
 
 async function verifyUserExists(email?: string, countryCode?: string, phone?: string) {
-    const types = []
+    const types:any[] = []
     if (email) {
         types.push({
             TableName: process.env.USERS_TABLE_NAME!,

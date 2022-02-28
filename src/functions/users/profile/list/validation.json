@@ -1,0 +1,20 @@
+{
+    "properties": {
+        "body": {
+        },
+        "query": {
+            "type": "object",
+            "properties": {
+                "pageToken": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false
+        },
+        "path": {}
+    },
+    "required": [
+        "query"
+    ],
+    "type": "object"
+}

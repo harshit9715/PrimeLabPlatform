@@ -1,0 +1,28 @@
+{
+    "properties": {
+        "body": {
+        },
+        "query": {
+        },
+        "path": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string",
+                    "format": "email"
+                },
+                "phone": {
+                    "type": "string",
+                    "pattern": "^\\+[0-9]{1,3}[0-9]{10,14}$"
+                }
+            }
+        }
+    },
+    "required": [
+        "path"
+    ],
+    "type": "object"
+}
