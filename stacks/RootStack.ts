@@ -94,7 +94,7 @@ export default class RootStack extends sst.Stack {
         
         
         // "POST /logout": "src/functions/users/logout/index.handler",
-        // "PUT /users/id/{id}": "src/functions/users/update/index.handler",
+        "PUT /users/id/{id}": "src/functions/users/profile/update/index.handler",
         
         // "POST /users/{id}/verify": "src/functions/users/verify/index.handler",
         // "POST /users/{id}/verify/confirm": "src/users/confirm_verify/index.handler",

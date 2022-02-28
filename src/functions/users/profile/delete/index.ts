@@ -5,9 +5,9 @@ const validate = require('./validation.js');
 
 export const handler: APIGatewayProxyHandlerV2 = base_handler(async (event: APIGatewayProxyEventV2) => {
     const response = await dynamodbLib.delete({
-      TableName: process.env.CONTACTS_TABLE_NAME!,
+      TableName: process.env.USERS_TABLE_NAME!,
       Key: {
-        id: event.pathParameters!.id,
+        userId: event.pathParameters!.id,
       },
       ReturnValues: 'ALL_OLD',
     })
